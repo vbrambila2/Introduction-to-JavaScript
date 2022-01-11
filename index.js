@@ -91,7 +91,7 @@ Do the following:
 */
 
 function dogYears(humanAge){
-  return humanAge + 7;
+  return humanAge * 7;
 }
 
 console.log("task 2", dogYears(28));
@@ -125,18 +125,18 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(dogAge, dogWeight) {
-  if (dogAge > 1 && dogWeight <= 5) {
+function hungryDog(dogWeight, dogAge) {
+  if (dogAge >= 1 && dogWeight <= 5) {
     return dogWeight * 0.05
   } else if (dogAge >= 1 && dogWeight > 5 && dogWeight <= 10) {
     return dogWeight * 0.04
-  } else if (dogAge > 1 && dogWeight > 10 && dogWeight <= 15) {
+  } else if (dogAge >= 1 && dogWeight > 10 && dogWeight <= 15) {
     return dogWeight * 0.03
-  } else if (dogAge > 1 && dogWeight > 15) {
+  } else if (dogAge >= 1 && dogWeight > 15) {
     return dogWeight * 0.02
   } else if (dogAge < 1 && dogAge > 0.16 && dogAge <= .33) {
     return dogWeight * 0.1
-  } else if (dogAge <1 && dogAge > .33 && dogAge <= 0.58) {
+  } else if (dogAge < 1 && dogAge > .33 && dogAge <= 0.58) {
     return dogWeight * 0.05
   } else if (dogAge < 1 && dogAge > 0.58) {
     return dogWeight * 0.04
@@ -145,7 +145,7 @@ function hungryDog(dogAge, dogWeight) {
   }
 }
 
-console.log("task 3", hungryDog(.4, 5))
+console.log("task 3", hungryDog(7, 1))
 
 
 
@@ -172,42 +172,42 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-let computer = Math.random();
+// let computer = Math.random();
 
-  if (computer >= 0 && computer <= 0.33) {
-    computer = "rock"
-  } else if (computer > 0.33 && computer <= 0.66) {
-    computer = "paper"
-  } else if (computer > 0.66 && computer <= 1) {
-    computer = "scissors"
-  } else {
-    console.log("no computer choice")
-  }
+//   if (computer >= 0 && computer <= 0.33) {
+//     computer = "rock"
+//   } else if (computer > 0.33 && computer <= 0.66) {
+//     computer = "paper"
+//   } else if (computer > 0.66 && computer <= 1) {
+//     computer = "scissors"
+//   } else {
+//     console.log("no computer choice")
+//   }
 
-  console.log(computer)
+//   console.log(computer)
 
 
-function game(user){
+function game(user, computer){
   if (user === "rock" && computer === "scissors") {
-    console.log("you win!")
+    return "you win!";
   } else if (user === "paper" && computer === "rock") {
-    console.log("you win!")
+    return "you win!";
   } else if (user === "scissors" && computer === "paper") {
-    console.log("you win!")
+    return "you win!";
   } else if (user === "rock" && computer === "paper") {
-    console.log("you lose!")
+    return "you lose!";
   } else if (user === "paper" && computer === "scissors") {
-    console.log("you lose!")
+    return "you lose!";
   } else if (user === "scissors" && computer === "rock") {
-    console.log("you win!")
+    return "you lose!";
   } else if ( user === computer) {
-    console.log("it/'s a tie")
+    return "it's a tie";
   } else {
-    console.log("Game Error")
+    return "Game Error";
   }
 }
 
-console.log(game("rock"));
+console.log(game("rock", "scissors"));
 
 
 
@@ -239,7 +239,7 @@ Using the feet function below do the following:
 */
 
 function feet(centimeters){
-  return centimeters * 0.0328084
+  return centimeters / 30.48
 }
 
 console.log("task 5b", feet(10));
@@ -261,13 +261,12 @@ function annoyingSong(startingNum){
   let i = 0;
   while (i < startingNum) {
     let newNum = startingNum - i;
-    let lastNum = newNum - 1;
-    console.log(`${newNum} bottles of soda on the wall, ${newNum} bottles of soda, take one down pass it around ${lastNum} bottles of soda on the wall`);
+    return `${newNum} bottles of soda on the wall, ${newNum} bottles of soda, take one down pass it around ${newNum -1} bottles of soda on the wall`;
     i++;
   }
 }
 
-console.log("task 6", annoyingSong(3))
+console.log("task 6", annoyingSong(5))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
